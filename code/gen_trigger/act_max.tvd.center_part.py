@@ -54,10 +54,17 @@ terminated = False
 best_data = None
 best_score = 0
 
-unit1 = int(sys.argv[1])
-unit2 = int(sys.argv[8])
-neuron_number = int(sys.argv[6])
-filter_shape = int(sys.argv[7])
+# unit1 = int(sys.argv[1])
+# unit2 = int(sys.argv[8])
+# neuron_number = int(sys.argv[6])
+# filter_shape = int(sys.argv[7])
+
+
+unit1=81
+unit2=694
+neuron_number=1
+filter_shape=0
+
 print('unit1', unit1, 'unit2', unit2, 'filter_shape', filter_shape, 'neuron_number', neuron_number)
 
 def filter_part(w, h):
@@ -393,12 +400,19 @@ def main():
     original_h = net.blobs['data'].height
 
     # which imagenet class to visualize
-    unit = int(sys.argv[1]) # unit
-    filename = str(sys.argv[2])
-    layer = str(sys.argv[3])    # layer
-    xy = int(sys.argv[4])       # spatial position
-    seed = int(sys.argv[5])     # random seed
+    # unit = int(sys.argv[1]) # unit
+    # filename = str(sys.argv[2])
+    # layer = str(sys.argv[3])    # layer
+    # xy = int(sys.argv[4])       # spatial position
+    # seed = int(sys.argv[5])     # random seed
     # seed = 7
+
+    layer=fc6
+    xy=0
+    seed=1
+    unit=81
+    filename="${layer}_${seed}_${unit1}_${unit2}_${neuron}_${filter_shape}"
+    
 
     print "----------"
     print "unit: %s \tfilename: %s\tlayer: %s\txy: %s\tseed: %s" % (unit, filename, layer, xy, seed)
